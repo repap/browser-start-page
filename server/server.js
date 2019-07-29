@@ -15,18 +15,13 @@ const WEATHER_API_URL = 'https://api.openweathermap.org/data/2.5/weather'
 
 app.use(cors())
 
-// parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
-
-// parse application/json
 app.use(bodyParser.json())
 
 app.use((req, res, next) => {
   console.log(req.method, req.path, req.hostname)
   next()
 })
-
-console.log(process.env)
 
 app.use('/', express.static(path.resolve('./build')))
 
