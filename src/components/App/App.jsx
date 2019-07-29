@@ -12,8 +12,8 @@ class App extends React.Component {
 
     this.updateApp = this.updateApp.bind(this)
 
-    const city = this.loadLocalStorage('city')
-    const name = this.loadLocalStorage('name')
+    const city = this.loadLocalStorage('city') || 'Berlin'
+    const name = this.loadLocalStorage('name') || 'John'
 
     this.state = {
       city,
